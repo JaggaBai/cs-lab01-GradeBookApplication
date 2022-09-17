@@ -63,7 +63,7 @@ namespace GradeBook.UserInterfaces
                     GradeBookUserInterface.CommandLoop(gradeBook2);
                     break;
                 default:
-                    Console.WriteLine(typNasz + " is not a supported type of gradebook, please try again");
+                    Console.WriteLine("{0}" + " is not a supported type of gradebook, please try again", typNasz);
                     //break;
                     return;
             }
