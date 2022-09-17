@@ -34,15 +34,41 @@ namespace GradeBook.UserInterfaces
         public static void CreateCommand(string command)
         {
             var parts = command.Split(' ');
-            if (parts.Length != 2)
+            //if (parts.Length != 2)
+            //{
+            //    Console.WriteLine("Command not valid, Create requires a name.");
+            //    return;
+            //}
+            if (parts.Length != 3)
             {
-                Console.WriteLine("Command not valid, Create requires a name.");
+                Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
                 return;
             }
+//◾If the value of  parts[2] is "standard" return a newly instantiated  StandardGradeBook  using the name  variable.
+//◾If the value of  parts[2] is "ranked" return a newly instantiated  RankedGradeBook  using the name  variable.
+//◾If the value of  parts[2]  doesn't match the above write the value of  parts[2]  followed by " is not a supported type of gradebook, please try again" to the console, then escape the method.
+
             var name = parts[1];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
-            Console.WriteLine("Created gradebook {0}.", name);
-            GradeBookUserInterface.CommandLoop(gradeBook);
+            string typNasz = parts[2];
+            switch (typNasz)
+            {
+                case "standard":
+                    BaseGradeBook gradeBook = new StandardGradeBook(name);
+                    Console.WriteLine("Created gradebook {0}.", name);
+                    GradeBookUserInterface.CommandLoop(gradeBook);
+                    break;
+                case "ranked":
+                    BaseGradeBook gradeBook2 = new RankedGradeBook(name); 
+                    Console.WriteLine("Created gradebook {0}.", name);
+                    GradeBookUserInterface.CommandLoop(gradeBook2);
+                    break;
+                default:
+                    Console.WriteLine(typNasz + " is not a supported type of gradebook, please try again");
+                    //break;
+                    return;
+            }
+                    //BaseGradeBook gradeBook = new BaseGradeBook(name);
+                   
         }
 
         public static void LoadCommand(string command)
