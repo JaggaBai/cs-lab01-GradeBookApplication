@@ -113,45 +113,46 @@ namespace GradeBook.GradeBooks
 
         public virtual double GetGPA(char letterGrade, StudentType studentType)
         {
-            switch (letterGrade)
-            {
-                case 'A':
-                    if (studentType == StudentType.Standard)
-                    {
-                        return 4;
-                    }
-                    else
-                    return 5;
-                case 'B':
-                    if (studentType == StudentType.Standard)
-                    {
-                        return 3;
-                    }
-                    else
-                        return 4;
-                case 'C':
-                    if (studentType == StudentType.Standard)
-                    {
-                        return 2;
-                    }
-                    else
-                        return 3;
-                case 'D':
-                    if (studentType == StudentType.Standard)
-                    {
-                        return 1;
-                    }
-                    else
-                        return 2;
-                case 'F':
-                    if (studentType == StudentType.Standard)
-                    {
-                        return 0;
-                    }
-                    else
-                        return 1;
-            }
-            return 0;
+                switch (letterGrade)
+                {
+                    case 'A':
+                        if (studentType == StudentType.Standard)
+                        {
+                            return 4;
+                        }
+                        else
+                            return 5;
+                    case 'B':
+                        if (studentType == StudentType.Standard)
+                        {
+                            return 3;
+                        }
+                        else
+                            return 4;
+                    case 'C':
+                        if (studentType == StudentType.Standard)
+                        {
+                            return 2;
+                        }
+                        else
+                            return 3;
+                    case 'D':
+                        if (studentType == StudentType.Standard)
+                        {
+                            return 1;
+                        }
+                        else
+                            return 2;
+                    case 'F':
+                        if (studentType == StudentType.Standard)
+                        {
+                            return 0;
+                        }
+                        else
+                            return 1;
+                }
+                return 0;
+         
         }
 
         public virtual void CalculateStatistics()

@@ -11,7 +11,7 @@ namespace GradeBook.GradeBooks
         {
             Name = name;
             Type = GradeBookType.Standard;
-            bool KB = konstbool;
+            IsWeighted = konstbool;
         }
     }
 }

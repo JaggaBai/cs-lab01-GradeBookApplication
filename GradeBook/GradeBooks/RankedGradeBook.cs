@@ -11,7 +11,7 @@ namespace GradeBook.GradeBooks
         {
             Name = name;
             Type = GradeBookType.Ranked;
-            bool KB = konstbool;
+         IsWeighted = konstbool;
         }
 
         //Override  RankedGradeBook 's  GetLetterGrade  method zadanie 3cie
