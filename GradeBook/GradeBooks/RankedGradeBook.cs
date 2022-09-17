@@ -13,7 +13,7 @@ namespace GradeBook.GradeBooks
             Type = GradeBookType.Ranked;
          IsWeighted = konstbool;
         }
-
+       
         //Override  RankedGradeBook 's  GetLetterGrade  method zadanie 3cie
         public override char GetLetterGrade(double averageGrade)
         {

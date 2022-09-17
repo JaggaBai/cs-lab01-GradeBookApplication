@@ -55,8 +55,13 @@ namespace GradeBook.UserInterfaces
 
             var name = parts[1];
             string typNasz = parts[2];
-            bool IsWeighted = Convert.ToBoolean(parts[3]);
-            switch (typNasz)
+            //zmiana ostatnia 23błąd 
+            bool IsWeighted;
+            if (parts[3] == "true")
+            { IsWeighted = true; }
+            else IsWeighted = false;
+                //= Convert.ToBoolean(parts[3]);
+                switch (typNasz)
             {
                 case "standard":
                     BaseGradeBook gradeBook = new StandardGradeBook(name, IsWeighted);
