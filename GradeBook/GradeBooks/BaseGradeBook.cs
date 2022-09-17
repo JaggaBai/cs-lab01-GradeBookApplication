@@ -19,9 +19,11 @@ namespace GradeBook.GradeBooks
         public string Name { get; set; }
         public List<Student> Students { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool konstbool)
         {
             Name = name;
+            //Set the  IsWeighted  property using the  bool  parameter
+            IsWeighted = konstbool;
             Students = new List<Student>();
         }
 
@@ -114,15 +116,40 @@ namespace GradeBook.GradeBooks
             switch (letterGrade)
             {
                 case 'A':
-                    return 4;
+                    if (studentType == StudentType.Standard)
+                    {
+                        return 4;
+                    }
+                    else
+                    return 5;
                 case 'B':
-                    return 3;
+                    if (studentType == StudentType.Standard)
+                    {
+                        return 3;
+                    }
+                    else
+                        return 4;
                 case 'C':
-                    return 2;
+                    if (studentType == StudentType.Standard)
+                    {
+                        return 2;
+                    }
+                    else
+                        return 3;
                 case 'D':
-                    return 1;
+                    if (studentType == StudentType.Standard)
+                    {
+                        return 1;
+                    }
+                    else
+                        return 2;
                 case 'F':
-                    return 0;
+                    if (studentType == StudentType.Standard)
+                    {
+                        return 0;
+                    }
+                    else
+                        return 1;
             }
             return 0;
         }

@@ -7,10 +7,11 @@ namespace GradeBook.GradeBooks
 {
     class RankedGradeBook : BaseGradeBook
     {
-        public RankedGradeBook(string name) : base(name)
+        public RankedGradeBook(string name, bool konstbool) : base(name, konstbool)
         {
             Name = name;
             Type = GradeBookType.Ranked;
+            bool KB = konstbool;
         }
 
         //Override  RankedGradeBook 's  GetLetterGrade  method zadanie 3cie
